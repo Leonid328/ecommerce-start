@@ -1,5 +1,9 @@
 # E-commerce Customer Support Agent System
 
+## Screenshots
+
+Module 1 screenshots (Streamlit): [screenshots.md](screenshots.md)
+
 Production-ready intelligent customer support system combining ML recommendations, 
 RAG-powered search, and LangChain agents.
 
