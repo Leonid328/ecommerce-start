@@ -1,4 +1,4 @@
-# Troubleshooting — Module 1 (Leonid328)
+# Troubleshooting - Module 1 (Leonid328)
 
 ## 1. `FileNotFoundError: data/products.csv`
 

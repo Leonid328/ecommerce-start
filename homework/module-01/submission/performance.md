@@ -1,8 +1,8 @@
 # Module 1: Performance baseline
 
 **Student:** Leonid328  
-**Date:** 2026-11-02  
-**Environment:** VPS `76.13.249.47` (7.3 GiB RAM, Docker 29.x) + local validation
+**Date:** 2026-11-03  
+**Environment:** VPS `168.231.116.71` (Hostinger KVM8, 31 GiB RAM, 8 vCPU) + earlier run on 8 GB KVM2
 
 ## Scope
 
@@ -28,7 +28,7 @@ Module 1 uses keyword search in pandas only (no LLM, no vector DB).
 
 ## Bottlenecks
 
-- **RAM:** full Jupyter + Docker build concurrently caused SSH banner timeout on VPS; run services sequentially on 8 GB hosts.
+- **RAM:** on the old 8 GB KVM2, Jupyter + Docker build together caused SSH timeout. On KVM8 (31 GiB) all services stay Up together.
 - **Search:** `str.contains` is O(n); will not scale past ~50k products without indexing or embeddings (later modules).
 
 ## Next optimizations (out of scope for module 1)

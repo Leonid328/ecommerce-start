@@ -1,7 +1,7 @@
 # Module 1: E-commerce Chat Agent System Architecture
 
 **Student:** Leonid328 (Leonid Bondarenko)  
-**Date:** 2026-11-02  
+**Date:** 2026-11-03  
 **Branch:** `homework/module-01/leonid328`
 
 ## 1. General architecture overview (end of module 1)
@@ -35,5 +35,5 @@ flowchart LR
 
 ### Deployment target (VPS)
 
-- Host: `root@76.13.249.47` (`/opt/mlops-hw/ecommerce-start`)
-- Expected check: `docker compose ps` → `chat-agent` **Up**, UI at `http://76.13.249.47:8501`
+- Host: `root@168.231.116.71` (`/opt/mlops-hw/ecommerce-start`)
+- Expected check: `docker compose ps` -> `chat-agent` **Up**, UI at `http://168.231.116.71:8501`

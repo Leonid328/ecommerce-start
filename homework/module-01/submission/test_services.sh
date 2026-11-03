@@ -41,8 +41,11 @@ else
 fi
 
 echo "--- Generator sanity ---"
-python3 scripts/data/generate_ecommerce_data.py --products 10 --output data-test
+# 10 products is too small: support generator samples by category and can hit empty slices.
+rm -rf data-test
+python3 scripts/data/generate_ecommerce_data.py \
+  --products 80 --customers 40 --orders 60 --conversations 15 --output data-test
 [[ -f data-test/products.csv ]] || fail "generator did not create data-test/products.csv"
-ok "generator --products 10"
+ok "generator wrote data-test/products.csv"
 
 echo "=== All checks passed ==="
