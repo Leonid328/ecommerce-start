@@ -1,0 +1,6 @@
+products: 80
+customers: 100
+orders: 120
+conversations: 40
+output: data
+seed: 42

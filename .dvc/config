@@ -1,0 +1,7 @@
+[core]
+    remote = ecommerce
+['remote "ecommerce"']
+    url = s3://ecommerce-bucket/dvc
+    endpointurl = http://127.0.0.1:9000
+    use_ssl = false
+    profile = minio

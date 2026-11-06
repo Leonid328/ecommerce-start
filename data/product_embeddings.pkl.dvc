@@ -1,0 +1,5 @@
+outs:
+- md5: 2f4181c83c027fb6464aa8b0f8e7bcec
+  size: 126771
+  hash: md5
+  path: product_embeddings.pkl
