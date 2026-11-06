@@ -1,0 +1,385 @@
+$ git config --global user.name
+Leonid328
+$ git config --global user.email
+leonidbondari152@gmail.com
+
+$ aws --version
+aws-cli/2.39.5 Python/3.15.2 Darwin/24.5.0 source/arm64
+
+$ alias minioaws='aws --endpoint-url http://127.0.0.1:9000 --profile minio'
+$ minioaws s3 ls
+2026-11-06 17:29:47 ecommerce-bucket
+
+$ dvc version
+DVC version: 3.67.1 (pip)
+-------------------------
+Platform: Python 3.12.10 on macOS-15.5-arm64-arm-64bit
+Subprojects:
+	dvc_data = 3.18.3
+	dvc_objects = 5.3.1
+	dvc_render = 1.0.2
+	dvc_task = 0.40.2
+	scmrepo = 3.6.2
+Supports:
+	http (aiohttp = 3.14.5, aiohttp-retry = 2.9.1),
+	https (aiohttp = 3.14.5, aiohttp-retry = 2.9.1),
+	s3 (s3fs = 2026.9.0)
+Config:
+	Global: /Users/leonidbondarenko/Library/Application Support/dvc
+	System: /Library/Application Support/dvc
+Cache types: <https://error.dvc.org/no-dvc-cache>
+Caches: local
+Remotes: None
+Workspace directory: apfs on /dev/disk3s1s1
+Repo: dvc, git
+Repo.site_cache_dir: /Library/Caches/dvc/repo/fea1acf15cfcc19c30b1fbd126b51a96
+
+$ dvc init
+ERROR: failed to initiate DVC - '.dvc' exists. Use `-f` to force.
+
+$ dvc remote add -d ecommerce s3://ecommerce-bucket/dvc
+Setting 'ecommerce' as a default remote.
+
+$ dvc remote modify ecommerce endpointurl http://127.0.0.1:9000
+
+$ dvc remote modify ecommerce use_ssl false
+
+$ dvc remote modify ecommerce profile minio
+
+$ ls -la
+total 72
+drwxr-xr-x@ 40 leonidbondarenko  staff  1280 Nov  6 17:30 .
+drwxr-xr-x@ 44 leonidbondarenko  staff  1408 Nov  6 17:21 ..
+-rw-r--r--@  1 leonidbondarenko  staff     0 Nov  6 17:20 .dockerignore
+drwxr-xr-x@  5 leonidbondarenko  staff   160 Nov  6 17:22 .dvc
+-rw-r--r--@  1 leonidbondarenko  staff     0 Nov  6 17:20 .editorconfig
+drwxr-xr-x@ 12 leonidbondarenko  staff   384 Nov  6 17:20 .git
+-rw-r--r--@  1 leonidbondarenko  staff     0 Nov  6 17:20 .gitattributes
+drwxr-xr-x@  5 leonidbondarenko  staff   160 Nov  6 17:20 .github
+-rw-r--r--@  1 leonidbondarenko  staff   361 Nov  6 17:20 .gitignore
+drwxr-xr-x@  6 leonidbondarenko  staff   192 Nov  6 17:21 .venv
+-rw-r--r--@  1 leonidbondarenko  staff     0 Nov  6 17:20 CONTRIBUTING.md
+-rw-r--r--@  1 leonidbondarenko  staff   588 Nov  6 17:20 COURSE_GUIDE.md
+-rw-r--r--@  1 leonidbondarenko  staff     0 Nov  6 17:20 LICENSE
+-rw-r--r--@  1 leonidbondarenko  staff     6 Nov  6 17:20 LICENSE.md
+-rw-r--r--@  1 leonidbondarenko  staff   557 Nov  6 17:20 Makefile
+-rw-r--r--@  1 leonidbondarenko  staff  1492 Nov  6 17:20 README.md
+drwxr-xr-x@  3 leonidbondarenko  staff    96 Nov  6 17:30 Screenshot
+-rw-r--r--@  1 leonidbondarenko  staff   485 Nov  6 17:20 TROUBLESHOOTING.md
+drwxr-xr-x@  7 leonidbondarenko  staff   224 Nov  6 17:20 airflow
+drwxr-xr-x@  3 leonidbondarenko  staff    96 Nov  6 17:27 conf
+drwxr-xr-x@  4 leonidbondarenko  staff   128 Nov  6 17:20 data
+drwxr-xr-x@  8 leonidbondarenko  staff   256 Nov  6 17:20 docker
+-rw-r--r--@  1 leonidbondarenko  staff   557 Nov  6 17:20 docker-compose.yml
+drwxr-xr-x@  8 leonidbondarenko  staff   256 Nov  6 17:20 docs
+drwxr-xr-x@ 16 leonidbondarenko  staff   512 Nov  6 17:20 homework
+drwxr-xr-x@  5 leonidbondarenko  staff   160 Nov  6 17:20 kubernetes
+drwxr-xr-x@  5 leonidbondarenko  staff   160 Nov  6 17:20 mlflow
+drwxr-xr-x@  6 leonidbondarenko  staff   192 Nov  6 17:20 models
+drwxr-xr-x@  6 leonidbondarenko  staff   192 Nov  6 17:20 monitoring
+drwxr-xr-x@  8 leonidbondarenko  staff   256 Nov  6 17:20 notebooks
+-rw-r--r--@  1 leonidbondarenko  staff     0 Nov  6 17:20 pyproject.toml
+-rw-r--r--@  1 leonidbondarenko  staff     0 Nov  6 17:20 requirements-dev.txt
+-rw-r--r--@  1 leonidbondarenko  staff    48 Nov  6 17:20 requirements.txt
+drwxr-xr-x@  4 leonidbondarenko  staff   128 Nov  6 17:20 screenshots
+-rw-r--r--@  1 leonidbondarenko  staff   253 Nov  6 17:20 screenshots.md
+drwxr-xr-x@ 12 leonidbondarenko  staff   384 Nov  6 17:20 scripts
+drwxr-xr-x@  6 leonidbondarenko  staff   192 Nov  6 17:20 services
+-rw-r--r--@  1 leonidbondarenko  staff     0 Nov  6 17:20 setup.py
+drwxr-xr-x@  3 leonidbondarenko  staff    96 Nov  6 17:20 src
+drwxr-xr-x@  6 leonidbondarenko  staff   192 Nov  6 17:20 tests
+
+$ python scripts/data/generate_ecommerce_data.py --products 80 --customers 100 --orders 120 --conversations 40
+======================================================================
+🛒 E-COMMERCE AGENT SYSTEM - DATA GENERATOR
+======================================================================
+
+📦 [1/6] Generating product catalog...
+   ✓ Generated 80 products → data/products.csv
+   ✓ Saved JSON version → data/products.json
+
+   Product distribution by category:
+category
+Home & Kitchen       23
+Electronics          15
+Clothing             15
+Books & Media        14
+Sports & Outdoors    13
+
+👥 [2/6] Generating customer profiles...
+   ✓ Generated 100 customers → data/customers.csv
+
+   Customer segments:
+segment
+regular       49
+occasional    32
+new           12
+high_value     7
+
+🛍️ [3/6] Generating order history...
+   ✓ Generated 120 orders → data/orders.csv
+   ✓ Generated 234 order items → data/order_items.csv
+
+   Order status distribution:
+status
+delivered     105
+cancelled       8
+returned        3
+shipped         2
+in_transit      1
+processing      1
+
+   Total revenue: $126,361.18
+   Average order value: $1053.01
+
+💬 [4/6] Generating customer support conversations...
+   ✓ Generated 38 conversations → data/support_conversations.csv
+
+   Issue type distribution:
+issue_type
+return_request     10
+product_inquiry     7
+technical_issue     6
+price_inquiry       6
+order_status        5
+recommendation      4
+
+   Outcome distribution:
+outcome
+resolved     27
+escalated     8
+pending       3
+
+   Average resolution time: 52.9 minutes
+
+📚 [5/6] Generating knowledge base...
+   ✓ Generated 8 KB articles → data/knowledge_base.csv
+   ✓ Saved JSON version → data/knowledge_base.json
+
+   KB categories:
+category
+products           2
+shipping           1
+returns            1
+account            1
+payment            1
+promotions         1
+troubleshooting    1
+
+🔢 [6/6] Generating product embeddings...
+   ✓ Generated 80 embeddings (384-dim) → data/product_embeddings.pkl
+   ✓ Size: 0.1 MB
+
+======================================================================
+✅ DATA GENERATION COMPLETE!
+======================================================================
+
+📁 Generated files in 'data/':
+   • products.csv              - 80 products
+   • products.json             - Same in JSON format
+   • customers.csv             - 100 customers
+   • orders.csv                - 120 orders
+   • order_items.csv           - 234 items
+   • support_conversations.csv - 38 conversations
+   • knowledge_base.csv        - 8 KB articles
+   • knowledge_base.json       - Same in JSON format
+   • product_embeddings.pkl    - 80 embeddings
+
+📊 Dataset Statistics:
+   Products:        80
+   Customers:       100
+   Orders:          120
+   Order Items:     234
+   Conversations:   38
+   KB Articles:     8
+   Total Revenue:   $126,361.18
+   Avg Order Value: $1053.01
+
+🎓 Usage in Course Modules:
+   Modules 1-9  (MLOps):     Use products, customers, orders for ML models
+   Modules 10-11 (LLMOps):   Use products.json + knowledge_base.json for RAG
+   Modules 12-14 (Agents):   Use support_conversations + all data for agents
+
+💡 Next Steps:
+   1. Load data into services (run setup script)
+   2. Import embeddings into vector DB
+   3. Test services with sample queries
+   4. Start Module 1!
+
+$ git check-ignore -v data/products.csv data/customers.csv data/orders.csv
+.gitignore:12:data/*.csv	data/products.csv
+.gitignore:12:data/*.csv	data/customers.csv
+.gitignore:12:data/*.csv	data/orders.csv
+
+$ dvc add data/products.csv data/products.json data/customers.csv data/orders.csv data/order_items.csv data/support_conversations.csv data/knowledge_base.csv data/knowledge_base.json data/product_embeddings.pkl
+
+To track the changes with git, run:
+
+	git add data/orders.csv.dvc data/order_items.csv.dvc data/products.json.dvc data/product_embeddings.pkl.dvc data/knowledge_base.csv.dvc data/products.csv.dvc data/customers.csv.dvc data/knowledge_base.json.dvc data/support_conversations.csv.dvc
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+
+ M .dvc/.gitignore
+M  .dvc/config
+A  conf/data.yaml
+A  data/customers.csv.dvc
+A  data/knowledge_base.csv.dvc
+A  data/knowledge_base.json.dvc
+A  data/order_items.csv.dvc
+A  data/orders.csv.dvc
+A  data/product_embeddings.pkl.dvc
+A  data/products.csv.dvc
+A  data/products.json.dvc
+A  data/support_conversations.csv.dvc
+A  scripts/data/generate_with_hydra.py
+?? Screenshot/
+[main aef5f7a] Track the generated ecommerce dataset with DVC and MinIO.
+ 12 files changed, 83 insertions(+)
+ create mode 100644 conf/data.yaml
+ create mode 100644 data/customers.csv.dvc
+ create mode 100644 data/knowledge_base.csv.dvc
+ create mode 100644 data/knowledge_base.json.dvc
+ create mode 100644 data/order_items.csv.dvc
+ create mode 100644 data/orders.csv.dvc
+ create mode 100644 data/product_embeddings.pkl.dvc
+ create mode 100644 data/products.csv.dvc
+ create mode 100644 data/products.json.dvc
+ create mode 100644 data/support_conversations.csv.dvc
+ create mode 100644 scripts/data/generate_with_hydra.py
+$ dvc push
+9 files pushed
+
+$ aws --endpoint-url http://127.0.0.1:9000 --profile minio s3 ls s3://ecommerce-bucket/dvc/ --recursive
+2026-11-06 17:31:17      14730 dvc/files/md5/07/3dc54b74c6f86ab920bc86d1b3e7af
+2026-11-06 17:31:17       9602 dvc/files/md5/28/e248783d9ab256461019ad2cce90e8
+2026-11-06 17:31:17     126771 dvc/files/md5/2f/4181c83c027fb6464aa8b0f8e7bcec
+2026-11-06 17:31:17      10868 dvc/files/md5/7a/46f5b69efbfd9f1d5ebe3c2bf264e2
+2026-11-06 17:31:17      32914 dvc/files/md5/88/bc791b4b75713753b88d343c923894
+2026-11-06 17:31:17      12000 dvc/files/md5/a3/892ded1d5e86a04e1c11588655e23d
+2026-11-06 17:31:17      18583 dvc/files/md5/c0/9d1422a599273bf3a1faa2115aed26
+2026-11-06 17:31:17      60167 dvc/files/md5/c4/001e7a4f824a56ef27ff18abec6181
+2026-11-06 17:31:17      20873 dvc/files/md5/fe/c1f74d3308787ad954d92ffb08ba20
+$ python scripts/data/generate_with_hydra.py products=40 customers=50 orders=60 conversations=20 hydra.job.chdir=false
+======================================================================
+🛒 E-COMMERCE AGENT SYSTEM - DATA GENERATOR
+======================================================================
+
+📦 [1/6] Generating product catalog...
+   ✓ Generated 40 products → data/products.csv
+   ✓ Saved JSON version → data/products.json
+
+   Product distribution by category:
+category
+Home & Kitchen       13
+Electronics           9
+Books & Media         8
+Clothing              7
+Sports & Outdoors     3
+
+👥 [2/6] Generating customer profiles...
+   ✓ Generated 50 customers → data/customers.csv
+
+   Customer segments:
+segment
+regular       23
+occasional    13
+new           11
+high_value     3
+
+🛍️ [3/6] Generating order history...
+   ✓ Generated 60 orders → data/orders.csv
+   ✓ Generated 117 order items → data/order_items.csv
+
+   Order status distribution:
+status
+delivered     51
+cancelled      5
+returned       2
+shipped        1
+in_transit     1
+
+   Total revenue: $65,772.68
+   Average order value: $1096.21
+
+💬 [4/6] Generating customer support conversations...
+   ✓ Generated 19 conversations → data/support_conversations.csv
+
+   Issue type distribution:
+issue_type
+recommendation     6
+return_request     5
+technical_issue    3
+product_inquiry    3
+order_status       1
+price_inquiry      1
+
+   Outcome distribution:
+outcome
+resolved     15
+escalated     3
+pending       1
+
+   Average resolution time: 58.4 minutes
+
+📚 [5/6] Generating knowledge base...
+   ✓ Generated 8 KB articles → data/knowledge_base.csv
+   ✓ Saved JSON version → data/knowledge_base.json
+
+   KB categories:
+category
+products           2
+shipping           1
+returns            1
+account            1
+payment            1
+promotions         1
+troubleshooting    1
+
+🔢 [6/6] Generating product embeddings...
+   ✓ Generated 40 embeddings (384-dim) → data/product_embeddings.pkl
+   ✓ Size: 0.1 MB
+
+======================================================================
+✅ DATA GENERATION COMPLETE!
+======================================================================
+
+📁 Generated files in 'data/':
+   • products.csv              - 40 products
+   • products.json             - Same in JSON format
+   • customers.csv             - 50 customers
+   • orders.csv                - 60 orders
+   • order_items.csv           - 117 items
+   • support_conversations.csv - 19 conversations
+   • knowledge_base.csv        - 8 KB articles
+   • knowledge_base.json       - Same in JSON format
+   • product_embeddings.pkl    - 40 embeddings
+
+📊 Dataset Statistics:
+   Products:        40
+   Customers:       50
+   Orders:          60
+   Order Items:     117
+   Conversations:   19
+   KB Articles:     8
+   Total Revenue:   $65,772.68
+   Avg Order Value: $1096.21
+
+🎓 Usage in Course Modules:
+   Modules 1-9  (MLOps):     Use products, customers, orders for ML models
+   Modules 10-11 (LLMOps):   Use products.json + knowledge_base.json for RAG
+   Modules 12-14 (Agents):   Use support_conversations + all data for agents
+
+💡 Next Steps:
+   1. Load data into services (run setup script)
+   2. Import embeddings into vector DB
+   3. Test services with sample queries
+   4. Start Module 1!
+
+$ wc -l data/products.csv data/customers.csv data/orders.csv
+      41 data/products.csv
+      51 data/customers.csv
+      61 data/orders.csv
+     153 total
+

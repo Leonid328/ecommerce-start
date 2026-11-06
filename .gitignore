@@ -37,6 +37,8 @@ mlartifacts/
 
 # Jupyter
 .ipynb_checkpoints/
+outputs/
+multirun/
 
 # DVC
 /models/recommendation_model.pkl

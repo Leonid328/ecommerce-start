@@ -1,8 +1,34 @@
 # E-commerce Customer Support Agent System
 
+## Module 02
+
+GitHub Classroom at https://classroom.github.com/a/QwZ9f6p1 now redirects to the Classroom retirement notice, so this module is in this repository. Git user is already `Leonid328`. DVC remote `ecommerce` is `s3://ecommerce-bucket/dvc` on MinIO at `http://127.0.0.1:9000`. Dataset files stay out of Git and are tracked by the `data/*.dvc` pointers.
+
+Hydra:
+
+```bash
+python scripts/data/generate_with_hydra.py products=40 customers=50 orders=60 conversations=20
+```
+
 ## Screenshots
 
 Module 1 screenshots (Streamlit): [screenshots.md](screenshots.md)
+
+Module 02 screenshots are in `Screenshot/`.
+
+![screenshot](Screenshot/minio-bucket.png)
+![screenshot](Screenshot/minio-dvc-files.png)
+![screenshot](Screenshot/console-01.png)
+![screenshot](Screenshot/console-02.png)
+![screenshot](Screenshot/console-03.png)
+![screenshot](Screenshot/console-04.png)
+![screenshot](Screenshot/console-05.png)
+![screenshot](Screenshot/console-06.png)
+![screenshot](Screenshot/console-07.png)
+![screenshot](Screenshot/console-08.png)
+![screenshot](Screenshot/console-09.png)
+![screenshot](Screenshot/console-10.png)
+![screenshot](Screenshot/console-11.png)
 
 Production-ready intelligent customer support system combining ML recommendations, 
 RAG-powered search, and LangChain agents.
